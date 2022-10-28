@@ -19,11 +19,6 @@ public class DbService {
         return repository.findAll();
     }
 
-    public List<Task> getTaskByID(Task task) {
-        return repository.findAllById(task.getId());
-
-    }
-
     public Task getTask(final Long taskId) throws TaskNotFoundException {
         return repository.findById(taskId).orElseThrow(TaskNotFoundException::new);
     }
@@ -32,10 +27,7 @@ public class DbService {
         return repository.save(task);
     }
 
-    public Optional<Task> findByID(Long taskid){
-        return repository.findById(taskid);
-    }
-  public void deleteTask(Long taskid){
+    public void deleteTask(Long taskid){
         repository.deleteById(taskid);
   }
 

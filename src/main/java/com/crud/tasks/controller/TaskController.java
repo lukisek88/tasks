@@ -43,11 +43,6 @@ public ResponseEntity<Void> delateTask(@PathVariable Long taskID) {
         Task savedTask = service.saveTask(task);
         return ResponseEntity.ok(taskMapper.mapToTaskDto(savedTask));
     }
-@PostMapping
-    public List<TaskDto>  showTaskID(@RequestBody Task task) {
-        List<Task> tasks = service.getTaskByID(task);
-        return taskMapper.mapToTaskDtoList(tasks);
-    }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     public void createTask(@RequestBody TaskDto taskDto) {
