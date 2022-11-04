@@ -49,11 +49,5 @@ public ResponseEntity<Void> delateTask(@PathVariable Long taskID) {
         Task task = taskMapper.mapToTask(taskDto);
         service.saveTask(task);
     }
-    /*try {
-            return new ResponseEntity<>(taskMapper.mapToTaskDto(service.getTask(taskId)), HttpStatus.OK);
-        }catch (TaskNotFoundException e){
-            return new ResponseEntity<>(
-                    new TaskDto(0l,"That Task: "+taskId,"fail"),HttpStatus.BAD_REQUEST);
-        }*/
 
 }

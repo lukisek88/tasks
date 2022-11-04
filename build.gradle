@@ -3,6 +3,7 @@ plugins {
     id 'io.spring.dependency-management' version '1.0.15.RELEASE'
     id 'java'
     id 'war'
+
 }
 
 group = 'com.tasks'
@@ -27,6 +28,7 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+
     }
 
 
