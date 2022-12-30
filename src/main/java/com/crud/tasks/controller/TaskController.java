@@ -2,7 +2,7 @@ package com.crud.tasks.controller;
 
 import com.crud.tasks.domain.Task;
 import com.crud.tasks.domain.TaskDto;
-import com.crud.tasks.mapper.TaskMapper;
+import com.crud.tasks.service.mapper.TaskMapper;
 import com.crud.tasks.service.DbService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
@@ -34,7 +34,7 @@ public ResponseEntity<TaskDto>getTask(@PathVariable Long taskID) throws TaskNotF
 }
 
 @DeleteMapping(value = "{taskID}")
-public ResponseEntity<Void> delateTask(@PathVariable Long taskID) {
+public ResponseEntity<Void> deleteTask(@PathVariable Long taskID) {
     service.deleteTask(taskID);
    return ResponseEntity.ok().build();
 }
