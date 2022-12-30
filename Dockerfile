@@ -8,7 +8,7 @@ WORKDIR /home/Luki/Kodilla_Projects/tasks
 COPY . .
 
 RUN addgroup -g 1001 -S appuser && adduser -u 1001 -S appuser -G appuser
-RUN chown -R 1001:1001 /home/jacolec/IdeaProjects1/tasks
+RUN chown -R 1001:1001 /home/Luki/Kodilla_Projects/tasks
 RUN ls
 USER 1001
 
