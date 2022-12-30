@@ -33,14 +33,17 @@ dependencies {
     }
 
 
-jar {
-    enabled = true
-}
-
-
-
+//jar {
+  //  enabled = false
+//}
 
 
 tasks.named('test') {
-    useJUnitPlatform()
+    onlyIf {
+        project.hasProperty("runtests")
+    }
+    doLast {
+        useJUnitPlatform()
+    }
 }
+
