@@ -13,7 +13,7 @@ RUN ls
 USER 1001
 
 EXPOSE 8080
-RUN cat  /home/Luki/Kodilla_Projects/tasks/src/main/resources/application-mogenius.properties >  /home/Luki/Kodilla_Projects/tasks/src/main/resources/application.properties
+RUN cat /home/Luki/Kodilla_Projects/tasks/src/main/resources/application-mogenius.properties > /home/Luki/Kodilla_Projects/tasks/src/main/resources/application.properties
 RUN chmod +x gradlew
 RUN echo ${MYSQL_DB_URL}
 RUN ./gradlew build -PMYSQL_DB_URL="jdbc:${MYSQL_DB_URL}"
