@@ -37,7 +37,7 @@ jar {
     enabled = true
 }
 
-test.onlyIf { !project.hasProperty('someProperty') }
+
 
 
 
