@@ -18,4 +18,4 @@ RUN chmod +x gradlew
 RUN echo ${MYSQL_DB_URL}
 RUN ./gradlew build -PMYSQL_DB_URL="jdbc:${MYSQL_DB_URL}"
 
-ENTRYPOINT ["java","-jar","/home/jacolec/IdeaProjects1/tasks/build/libs/tasks-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java","-jar","/home/Luki/Kodilla_Projects/tasks/build/libs/tasks-0.0.1-SNAPSHOT.jar"]
