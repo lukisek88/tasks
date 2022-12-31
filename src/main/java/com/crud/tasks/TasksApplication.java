@@ -4,11 +4,13 @@ package com.crud.tasks;
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 //war
 //import org.springframework.boot.builder.SpringApplicationBuilder;
 //import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
+@EnableScheduling
 @OpenAPIDefinition
 @SpringBootApplication
 public class TasksApplication  // extends SpringBootServletInitializer {

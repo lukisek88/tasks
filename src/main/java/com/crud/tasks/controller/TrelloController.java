@@ -3,7 +3,8 @@ package com.crud.tasks.controller;
 import com.crud.tasks.domain.CreatedTrelloCard;
 import com.crud.tasks.domain.TrelloBoardDto;
 import com.crud.tasks.domain.TrelloCardDto;
-import com.crud.tasks.trello.client.TrelloClient;
+import com.crud.tasks.service.TrelloService;
+// import com.crud.tasks.trello.client.TrelloClient;
 import lombok.RequiredArgsConstructor;
 
 import org.springframework.http.ResponseEntity;
@@ -17,8 +18,24 @@ import java.util.List;
 @RequiredArgsConstructor
 @CrossOrigin("*")
 public class TrelloController {
+    private final TrelloService trelloService;
 
-    private final TrelloClient trelloClient;
+    @GetMapping("boards")
+    public ResponseEntity<List<TrelloBoardDto>> getTrelloBoards() {
+
+        return ResponseEntity.ok(trelloService.fetchTrelloBoards());
+    }
+    @PostMapping("cards")
+    public ResponseEntity<CreatedTrelloCard> createTrelloCard(@RequestBody TrelloCardDto trelloCardDto) {
+        return ResponseEntity.ok(trelloService.createTrelloCard(trelloCardDto));
+    }
+}
+
+
+
+
+
+  /*  private final TrelloClient trelloClient;
 
     @GetMapping("boards")
     public void getTrelloBoards() {
@@ -33,16 +50,15 @@ public class TrelloController {
         });
     }
 
-/*    @GetMapping("kodilla")
+    @GetMapping("kodilla")
     private void getTrelloBoard() {
         List<TrelloBoardDto> trelloBoards = trelloClient.getTrelloBoards();
         trelloBoards.stream()
                 .filter(name-> name.getName().startsWith("Kodilla"))
                 .forEach(System.out::println);
-    }*/
+    }
 @PostMapping("cards")
 public CreatedTrelloCard createTrelloCard(@RequestBody TrelloCardDto trelloCardDto) {
     return trelloClient.createNewCard(trelloCardDto);
-}
+} }*/
 
-}
