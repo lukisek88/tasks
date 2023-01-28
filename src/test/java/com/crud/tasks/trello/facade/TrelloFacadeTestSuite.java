@@ -8,9 +8,10 @@ import com.crud.tasks.mapper.TrelloMapper;
 import com.crud.tasks.service.TrelloService;
 import com.crud.tasks.trello.validator.TrelloValidator;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-
+import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.List;
 
@@ -18,6 +19,8 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.mockito.ArgumentMatchers.anyList;
 import static org.mockito.Mockito.when;
 
+
+@ExtendWith(MockitoExtension.class)
 class TrelloFacadeTestSuite {
 
     @InjectMocks
@@ -82,13 +85,13 @@ class TrelloFacadeTestSuite {
         when(trelloValidator.validateTrelloBoards(mappedTrelloBoards)).thenReturn(mappedTrelloBoards);
 
         // When
-        List<TrelloBoardDto> trelloBoardDtos = trelloFacade.fetchTrelloBoards();
+        List<TrelloBoardDto> trelloboardDto = trelloFacade.fetchTrelloBoards();
 
         // Then
-        assertThat(trelloBoardDtos).isNotNull();
-        assertThat(trelloBoardDtos.size()).isEqualTo(1);
+        assertThat(trelloboardDto).isNotNull();
+        assertThat(trelloboardDto.size()).isEqualTo(1);
 
-        trelloBoardDtos.forEach(trelloBoardDto -> {
+        trelloboardDto.forEach(trelloBoardDto -> {
 
             assertThat(trelloBoardDto.getId()).isEqualTo("1");
             assertThat(trelloBoardDto.getName()).isEqualTo("test");
