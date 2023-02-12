@@ -43,19 +43,19 @@ dependencies {
   //  enabled = false
 //}
 
-test {
+//test {
 
-    useJUnitPlatform()
+  //  useJUnitPlatform()
 
-}
-
-
-//tasks.named('test') {
-  //  onlyIf {
-    //    project.hasProperty("runtests")
-    //}
-    //doLast {
-      //  useJUnitPlatform()
-   // }
 //}
+
+
+tasks.named('test') {
+    onlyIf {
+    project.hasProperty("runtests")
+    }
+    doLast {
+       useJUnitPlatform()
+   }
+}
 
