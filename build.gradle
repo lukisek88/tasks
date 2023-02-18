@@ -36,6 +36,9 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-mail'
 
     implementation group: 'org.postgresql', name: 'postgresql', version: '42.5.0'
+
+    //immpl modul 32
+    implementation('org.springframework.boot:spring-boot-starter-thymeleaf')
     }
 
 
